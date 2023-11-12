@@ -1,0 +1,154 @@
+:root,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border: 1px solid gainsboro;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.menu .hamburger {
+  font-size: 1.5rem;
+}
+
+.icon {
+  cursor: pointer;
+  color: rgb(82, 81, 81);
+}
+
+.container {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #949494;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #949494;
+  padding: 6px 1rem;
+  border-radius: 5px;
+  color: green;
+}
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.order_id {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.order_id span:first-child {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.th {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  color: black;
+  font-size: 18px;
+}
+
+.th span {
+  color: black;
+  font-weight: 600;
+}
+
+.tr {
+  display: grid;
+  padding: 5px;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+}
+.tr:nth-child(odd) {
+  background-color: rgba(148, 147, 147, 0.507);
+}
+
+.tr:nth-child(odd) span {
+  color: white;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #949494;
+  margin-top: 2rem;
+}
+
+.pricing .item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.pricing .item span:first-child {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-size: 20px;
+  padding: 6px;
+  text-align: center;
+  width: 100%;
+}
+
+.address {
+  border-radius: 5px;
+  border: 1px solid #949494;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandyHub Product Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./product.css" />
+  </head>
+  <body>
+    <main>
+      <nav class="nav">
+        <div class="logo">LOGO</div>
+        <div class="menu">
+          <i class="fa-solid fa-bars icon hamburger"></i>
+        </div>
+      </nav>
+      <section class="container">
+        <div class="gallery">
+          <button class="btn">Edit</button>
+          <div class="output"></div>
+          <input
+            id="images"
+            name="images"
+            multiple="multiple"
+            type="file"
+            accept="image/jpeg, image/jpg, image/png"
+          />
+        </div>
+        <div class="product_info_container">
+          <h3>Product Info</h3>
+          <div class="info">
+            <button id="infoBtn">Edit</button>
+            <textarea class="product_info" name="product_info" readonly>
+ 
+              Sneakers or trainers, also known by a wide variety of other names,
+              are shoes primarily designed for sports or other forms of physical
+              exercise but which are also widely used for everyday casual
+              wear...
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <section>
+        <button id="uploadBtn">Save Changes</button>
+      </section>
+    </main>
+
+    <script>
+      const ImageEditBtn = document.querySelector(".btn");
+      const ImageGallery = document.querySelector(".output");
+      const ImagesInput = document.getElementById("images");
+      const uploadBtn = document.getElementById("uploadBtn");
+      const productInfo = document.querySelector(".product_info");
+      const infoBtn = document.getElementById("infoBtn");
+
+      infoBtn.addEventListener("click", () => {
+        productInfo.readOnly = false;
+      });
+
+      ImageEditBtn.addEventListener("click", () => {
+        ImagesInput.style.visibility = "visible";
+      });
+      let files;
+      ImagesInput.addEventListener("change", (e) => {
+        ImagesInput.style.visibility = "hidden";
+        files = Array.from(e.target.files || []);
+        displayImages();
+        console.log(ImageGallery);
+      });
+
+      function displayImages() {
+        let images = "";
+        files.forEach((image, index) => {
+          images += `<div class="image">
+                <img src="${URL.createObjectURL(
+                  image
+                )}" alt="image" class="images">
+                <span onclick="deleteImage(${index})">&times;</span>
+              </div>`;
+        });
+        ImageGallery.innerHTML = images;
+      }
+
+      function uploadMultipleFiles() {
+        let formData = new FormData();
+        formData.append("product_info", productInfo.value);
+        for (let i = 0; i < files.length; i++) {
+          formData.append(`images${i}`, files[i]);
+        }
+
+        formData.forEach((item) => {
+          console.log(item);
+        });
+        fetch("http://localhost:3000/api/v1/products/1", {
+          method: "PUT",
+          body: formData,
+        });
+      }
+
+      uploadBtn.addEventListener("click", () => {
+        uploadMultipleFiles();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandyHub profile</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main>
+      <nav class="nav">
+        <div class="logo">LOGO</div>
+        <div class="menu">
+          <i class="fa-solid fa-bars icon hamburger"></i>
+        </div>
+      </nav>
+      <h2>Profile info</h2>
+      <section>
+        <img
+          src="https://media.istockphoto.com/id/1471845315/photo/happy-portrait-or-business-woman-taking-a-selfie-in-office-building-for-a-social-media.jpg?s=612x612&w=0&k=20&c=AOylBL01joI0zphCAFr6YVrsOgp_jd2XtVUychLXYho="
+          alt=""
+        />
+        <div class="info">
+          <div class="item">
+            <span>First Name:</span>
+            <input value="Adeyemo" id="fname" readonly />
+            <i id="fnameIcon" class="fa-solid fa-pencil icon"></i>
+          </div>
+          <div class="item">
+            <span>Last Name:</span>
+            <input value="Akinola" id="lname" readonly />
+            <i id="lnameIcon" class="fa-solid fa-pencil icon"></i>
+          </div>
+          <div class="item">
+            <span>Email:</span>
+            <input value="adeyemoak1997@gmail.com" id="email" readonly />
+          </div>
+          <div class="item">
+            <span>Phone:</span>
+            <input value="07011307615" id="phone" readonly />
+            <i id="phoneIcon" class="fa-solid fa-pencil icon"></i>
+          </div>
+          <div class="item">
+            <span>Brief Desc:</span>
+            <input value="I am not a nice guy" id="desc" readonly />
+            <i id="descIcon" class="fa-solid fa-pencil icon"></i>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="address">
+          <h2>Delivery Address</h2>
+          <div>
+            <input
+              value="F-23 UCH Cooperative Estate Ibadan"
+              id="delivery"
+              readonly
+            />
+
+            <i id="deliveryIcon" class="fa-solid fa-pencil icon"></i>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="address">
+          <h2>Billing Address</h2>
+          <div>
+            <input
+              value="F-23 UCH Cooperative Estate Ibadan"
+              id="billing"
+              readonly
+            />
+            <i id="billingIcon" class="fa-solid fa-pencil icon"></i>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="address">
+          <h2>Orders</h2>
+          <div class="table">
+            <div class="th">
+              <span>Id</span>
+              <span>Product Name</span>
+              <span>Price</span>
+              <span>Purchase Date</span>
+              <span>Status</span>
+            </div>
+            <div class="tr">
+              <span>1</span>
+              <a href="./order.html">
+                <span>Women Pant Trouser</span>
+              </a>
+              <span>$25</span>
+              <span>22/6/2022</span>
+              <span class="success">Success</span>
+            </div>
+            <div class="tr">
+              <span>2</span>
+              <a href="./order.html">
+                <span>Smart Sniker</span>
+              </a>
+              <span>$250</span>
+              <span>3/1/2023</span>
+              <span class="pending">Pending</span>
+            </div>
+            <div class="tr">
+              <span>3</span>
+              <a href="./order.html">
+                <span>Gucci Wrist Watches</span>
+              </a>
+              <span>$190</span>
+              <span>23/7/2023</span>
+              <span class="failed">Failed</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="address">
+          <h2>Products</h2>
+          <div class="table">
+            <div class="th">
+              <span>SN</span>
+              <span>Product Name</span>
+              <span>Quantity</span>
+              <span>Status</span>
+            </div>
+            <div class="tr">
+              <span>1</span>
+              <a href="./product.html">
+                <span>Women Pant Trouser</span>
+              </a>
+              <span>25</span>
+              <span class="success">Available</span>
+            </div>
+            <div class="tr">
+              <span>2</span>
+              <a href="./product.html">
+                <span>Smart Sniker</span>
+              </a>
+              <span>250</span>
+              <span class="success">Available</span>
+            </div>
+            <div class="tr">
+              <span>3</span>
+              <a href="./product.html">
+                <span>Gucci Wrist Watches</span>
+              </a>
+              <span>0</span>
+              <span class="failed">Out of Stock</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./profile.js"></script>
+  </body>
+</html>
